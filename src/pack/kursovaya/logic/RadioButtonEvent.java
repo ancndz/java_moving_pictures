@@ -4,27 +4,23 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import pack.kursovaya.app.CenterPanel;
-import pack.kursovaya.app.LeftPanel;
 
 public class RadioButtonEvent implements ActionListener {
 
     private CenterPanel centerPanel;
-    private LeftPanel leftPanel;
 
-    private String functionName = "Прямая";
-    //private ChangeFunc.Functions function = ChangeFunc.Functions.LINE;
+    private String gifName = "Walking";
 
-    public RadioButtonEvent(CenterPanel centerPanel, LeftPanel leftPanel) {
+    public RadioButtonEvent(CenterPanel centerPanel) {
         this.centerPanel = centerPanel;
-        this.leftPanel = leftPanel;
     }
 
     @Override
     public void actionPerformed(ActionEvent arg) {
 
-        //получаем название радиокнопки, это название нашей функции
         AbstractButton aButton = (AbstractButton) arg.getSource();
-        this.functionName = aButton.getText();
+        //получаем название радиокнопки, это название нашей функции
+        this.gifName = aButton.getText();
 
         //объект класса ChangeFunc для смены функции
         //ChangeFunc changeFunc = new ChangeFunc();
@@ -32,7 +28,7 @@ public class RadioButtonEvent implements ActionListener {
 
         //применяем полученые значения к функции и названию
         //centerPanel.setFunction(this.function);
-        centerPanel.setFunctionName(this.functionName);
+        centerPanel.setGifName(this.gifName);
 
         //пересчет данных с новой функцией
         //centerPanel.getChart().getXYPlot().setDataset(centerPanel.makeDataSet());

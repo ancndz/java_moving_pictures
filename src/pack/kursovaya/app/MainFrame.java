@@ -4,7 +4,6 @@ import pack.kursovaya.logic.RadioButtonEvent;
 
 import javax.swing.JFrame;
 import java.awt.*;
-import pack.kursovaya.logic.ButtonEvent;
 
 public class MainFrame extends JFrame {
     public MainFrame() {
@@ -22,11 +21,9 @@ public class MainFrame extends JFrame {
         getContentPane().add(leftPanel, BorderLayout.WEST);
 
         //событие, которое вызывается при нажатии на радио кнопки (смена функции)
-        RadioButtonEvent radioEvent = new RadioButtonEvent(centerPanel, leftPanel);
+        RadioButtonEvent radioEvent = new RadioButtonEvent(centerPanel);
         leftPanel.setRadioEvent(radioEvent);
 
-        //событие, котороые вызывается при нажатии нижней кнопки (установка коэффициентов)
-        ButtonEvent event = new ButtonEvent(centerPanel, leftPanel);
 
     }
 

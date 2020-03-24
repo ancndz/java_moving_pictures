@@ -9,12 +9,7 @@ import java.awt.*;
 
 public class LeftPanel extends JPanel {
 
-    //радио кнопки для выбора функции
-    JRadioButton radio1;
-    JRadioButton radio2;
-    JRadioButton radio3;
-    JRadioButton radio4;
-
+    //Lis
 
     //настройка области с элементами
     private GridBagConstraints getGridBagConstraints(int row) {
@@ -37,41 +32,13 @@ public class LeftPanel extends JPanel {
         setLayout(layout);
 
         layConstraints = getGridBagConstraints(0);
-        add(new JLabel("Анимации:"), layConstraints);
-
-        radio1 = new JRadioButton("Ходьба");
-        layConstraints = getGridBagConstraints(1);
-        radio1.setSelected(true);
-        add(radio1, layConstraints);
-
-        radio2 = new JRadioButton("Бег");
-        layConstraints = getGridBagConstraints(2);
-        add(radio2, layConstraints);
-
-        radio3 = new JRadioButton("Приседания");
-        layConstraints = getGridBagConstraints(3);
-        add(radio3, layConstraints);
+        add(new JLabel("Animations:"), layConstraints);
 
 
-        radio4 = new JRadioButton("Сигнал");
-        layConstraints = getGridBagConstraints(4);
-        add(radio4, layConstraints);
-
-        ButtonGroup buttonGroup = new ButtonGroup();
-        buttonGroup.add(radio1);
-        buttonGroup.add(radio2);
-        buttonGroup.add(radio3);
-        buttonGroup.add(radio4);
-
-        buttonGroup.getElements();
 
     }
     private static final long serialVersionUID = 1L;
 
     public void setRadioEvent(RadioButtonEvent radioEvent) {
-        this.radio1.addActionListener(radioEvent);
-        this.radio2.addActionListener(radioEvent);
-        this.radio3.addActionListener(radioEvent);
-        this.radio4.addActionListener(radioEvent);
     }
 }
