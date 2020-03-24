@@ -1,10 +1,10 @@
-package java.kursovaya.logic;
+package pack.kursovaya.logic;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.kursovaya.app.CenterPanel;
-import java.kursovaya.app.LeftPanel;
+import pack.kursovaya.app.CenterPanel;
+import pack.kursovaya.app.LeftPanel;
 
 public class RadioButtonEvent implements ActionListener {
 
@@ -38,7 +38,7 @@ public class RadioButtonEvent implements ActionListener {
         //centerPanel.getChart().getXYPlot().setDataset(centerPanel.makeDataSet());
 
         //отображение формулы
-        leftPanel.setFormulaLabel(centerPanel.getFunctionName(), centerPanel.getCoefA(), centerPanel.getCoefB(), centerPanel.getCoefC());
+        //leftPanel.setFormulaLabel(centerPanel.getFunctionName(), centerPanel.getCoefA(), centerPanel.getCoefB(), centerPanel.getCoefC());
 
     }
 

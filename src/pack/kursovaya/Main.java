@@ -1,11 +1,11 @@
-package java.kursovaya;
+package pack.kursovaya;
 
-import java.kursovaya.app.MainFrame;
+import pack.kursovaya.app.MainFrame;
 
 public class Main {
     public static void main(String[] args) {
         MainFrame app = new MainFrame();
-        app.setTitle("Графики JAVA");
+        app.setTitle("Мультфильмы");
         app.setVisible(true);
     }
 }

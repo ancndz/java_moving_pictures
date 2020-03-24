@@ -1,4 +1,4 @@
-package java.kursovaya.app;
+package pack.kursovaya.app;
 
 import javax.swing.*;
 

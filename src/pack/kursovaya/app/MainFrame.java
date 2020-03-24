@@ -1,9 +1,10 @@
-package java.kursovaya.app;
+package pack.kursovaya.app;
+
+import pack.kursovaya.logic.RadioButtonEvent;
 
 import javax.swing.JFrame;
 import java.awt.*;
-import java.kursovaya.logic.ButtonEvent;
-import java.kursovaya.logic.RadioButtonEvent;
+import pack.kursovaya.logic.ButtonEvent;
 
 public class MainFrame extends JFrame {
     public MainFrame() {
@@ -26,7 +27,6 @@ public class MainFrame extends JFrame {
 
         //событие, котороые вызывается при нажатии нижней кнопки (установка коэффициентов)
         ButtonEvent event = new ButtonEvent(centerPanel, leftPanel);
-        leftPanel.getOkButton().addActionListener(event);
 
     }
 
