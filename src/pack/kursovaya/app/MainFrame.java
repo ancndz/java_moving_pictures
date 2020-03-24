@@ -1,9 +1,10 @@
 package pack.kursovaya.app;
 
-import pack.kursovaya.logic.RadioButtonEvent;
+import pack.kursovaya.logic.SelectAnimationEvent;
 
 import javax.swing.JFrame;
 import java.awt.*;
+import java.io.IOException;
 
 public class MainFrame extends JFrame {
     public MainFrame() {
@@ -14,16 +15,16 @@ public class MainFrame extends JFrame {
 
         //панель с графиком, помещаем ее по центру
         CenterPanel centerPanel = new CenterPanel();
-        //getContentPane().add(centerPanel.getChartPanel(), BorderLayout.CENTER);
+        getContentPane().add(centerPanel, BorderLayout.CENTER);
 
         //панель с кнопками и прочим - помещаем ее слева
         LeftPanel leftPanel = new LeftPanel();
         getContentPane().add(leftPanel, BorderLayout.WEST);
 
         //событие, которое вызывается при нажатии на радио кнопки (смена функции)
-        RadioButtonEvent radioEvent = new RadioButtonEvent(centerPanel);
-        leftPanel.setRadioEvent(radioEvent);
+        SelectAnimationEvent selectionEvent = new SelectAnimationEvent(centerPanel);
 
+        leftPanel.setEvent(selectionEvent);
 
     }
 

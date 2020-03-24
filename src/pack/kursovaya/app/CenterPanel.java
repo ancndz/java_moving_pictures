@@ -21,6 +21,10 @@ public class CenterPanel extends JPanel {
 
 
     public CenterPanel() {
+        changeGifPack();
+    }
+
+    private void changeGifPack() {
         image = new ArrayList<>();
         File frame = null;
         try {
@@ -34,10 +38,11 @@ public class CenterPanel extends JPanel {
         assert frame != null;
         int i = 0;
         while (frame.exists()) {
+
             try {
                 image.add(ImageIO.read(new File("pics/".concat(this.gifName).concat("/").concat(Integer.toString(i).concat(".png")))));
             } catch (IOException ex) {
-                continue;
+                break;
             }
             i = i + 1;
         }
@@ -46,11 +51,11 @@ public class CenterPanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-       // g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters
+        g.drawImage(image.get(0), 0, 0, this); // see javadoc for more info on the parameters
     }
 
-    public void setGifName(String functionName) {
-        this.gifName = functionName;
+    public void setGifName(String gifName) {
+        this.gifName = gifName;
     }
 
     public String getGifName() {
