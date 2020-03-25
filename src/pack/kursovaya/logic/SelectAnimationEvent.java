@@ -10,19 +10,19 @@ public class SelectAnimationEvent implements ListSelectionListener {
 
     private CenterPanel centerPanel;
 
-    private String gifName = "Walking";
-
     public SelectAnimationEvent(CenterPanel centerPanel) {
         this.centerPanel = centerPanel;
     }
 
-
+    //метод для определения выбраной позиции списка
     @Override
     public void valueChanged(ListSelectionEvent listSelectionEvent) {
 
-        this.gifName = (String) ((JList<?>)listSelectionEvent.getSource()).getSelectedValue();
+        String gifName = (String) ((JList<?>) listSelectionEvent.getSource()).getSelectedValue();
 
-        this.centerPanel.setGifName(this.gifName);
+        this.centerPanel.setGifName(gifName);
+
+        this.centerPanel.changeGifPack();
 
     }
 }
