@@ -81,7 +81,7 @@ public class LeftPanel extends JPanel {
         this.gifFolders = loadGifFolders();
 
         layConstraints = getGridBagConstraints(0);
-        add(new JLabel("Animations:"), layConstraints);
+        add(new JLabel("Анимации:"), layConstraints);
 
         //заполнение и добавление названий анимаций (папок)
         this.animationList = new JList<>();

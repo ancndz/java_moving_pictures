@@ -51,26 +51,28 @@ public class CenterPanel extends JPanel {
 
         File frame = new File("pics/".concat(this.gifName).concat("/").concat("0.png"));
 
-        if (!frame.exists()) {
+        int i = 0;
+
+        while (frame.exists()) {
+            try {
+                this.images.add(ImageIO.read(frame));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            i = i + 1;
+            frame = new File("pics/".concat(this.gifName).concat("/").concat(Integer.toString(i).concat(".png")));
+        }
+
+        if (i == 0) {
             showMessageDialog(this,
-                    "Не найдено главного элемента (0.png).",
+                    "Не найдено ни одного элемента в папке \"" + this.gifName + "\".",
                     "Ошибка!",
                     JOptionPane.ERROR_MESSAGE);
             System.exit(3);
         } else {
-            int i = 0;
-            while (frame.exists()) {
-                try {
-                    this.images.add(ImageIO.read(new File("pics/".concat(this.gifName).concat("/").concat(Integer.toString(i).concat(".png")))));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                i = i + 1;
-            }
             revalidate();
             repaint();
         }
-
     }
 
     //метод для отрисовки выбранного изображения
